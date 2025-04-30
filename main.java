@@ -93,9 +93,47 @@ abstract class personaje {
         void curar(int cantidad);
     }
 
-    
+    interface movilizable {
+        void moverse();
+    }
+    interface ocultable {
+        void ocultar();
+    }
 
-   
+    class hechicero extends personajemagico implements defendible{
+        public hechicero(String nombre, int salud, int nivel, int magia) {
+        super(nombre, salud, nivel, magia);
+        }
+
+        @Override
+        void atacar() {
+        lanzar_hechizo();
+        }
+
+        @Override
+        public void defenderse() {
+        System.out.println(nombre + " Usa un hechizo de proteccion sobre si mismo");
+        }
+    }
+
+    class asesino extends personajefisico implements movilizable, ocultable {
+        public asesino(String nombre, int salud, int nivel, int fuerza) {
+        super(nombre, salud, nivel, fuerza);
+        }
+
+        @Override
+        void atacar() {
+        golpear();
+        }  
+        @Override
+        public void ocultar() {
+        System.out.println(nombre + " se esconde en las sombras");
+        }
 
 
+        @Override
+        public void moverse() {
+        System.out.println(nombre + " se mueve con sigilo");
+        }
+    }
 }
