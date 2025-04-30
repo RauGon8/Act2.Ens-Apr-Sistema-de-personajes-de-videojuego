@@ -214,6 +214,20 @@ abstract class personaje {
                 if (p instanceof personajefisico) {
                     ((personajefisico) p).golpear();
                 }
+                if (p instanceof personajemagico) {
+                    ((personajemagico) p).lanzar_hechizo();
+                }
+                if (p instanceof guerrero) {
+                    ((guerrero) p).cargarAtaque();
+                }
+                if (p instanceof mago) {
+                    ((mago) p).curar(10);
+                }
+                if (p instanceof hechicero) {
+                    ((hechicero) p).defenderse();
+                }
+                if (p instanceof asesino) { 
+                    ((asesino) p).ocultar();
             }
             
 
