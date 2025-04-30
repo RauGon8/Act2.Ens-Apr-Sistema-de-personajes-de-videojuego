@@ -72,7 +72,18 @@ abstract class personaje {
         }
     }
         
+    abstract class personajemagico extends personaje {
+        protected int magia;
 
+        public personajemagico(String nombre, int salud, int nivel, int magia) {
+            super(nombre, salud, nivel);
+            this.magia = magia;
+        }
+
+        public void lanzar_hechizo() {
+            System.out.println(nombre + " lanza un hechizo con magia " + magia);
+        }
+    }
 
 
 }
