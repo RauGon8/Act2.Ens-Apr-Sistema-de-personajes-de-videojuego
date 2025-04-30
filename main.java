@@ -99,6 +99,7 @@ abstract class personaje {
     interface ocultable {
         void ocultar();
     }
+   
 
     class hechicero extends personajemagico implements defendible{
         public hechicero(String nombre, int salud, int nivel, int magia) {
@@ -136,4 +137,58 @@ abstract class personaje {
         System.out.println(nombre + " se mueve con sigilo");
         }
     }
+
+    class guerrero extends personajefisico implements defendible {
+        public int armadura;
+        public int escudo;
+    
+        public guerrero(String nombre, int nivel, int salud, int fuerza, int armadura, int escudo) {
+            super(nombre, nivel, salud, fuerza);
+            this.armadura = armadura;
+            this.escudo = escudo;
+        }
+    
+        @Override
+        public void atacar() {
+            System.out.println(nombre + " ataca con su espada causando " + fuerza + " de daño");
+        }
+    
+        @Override
+        public void defenderse() {
+            System.out.println(nombre + " levanta su escudo para defenderse");
+        }
+    
+        public void cargarAtaque() {
+            System.out.println(nombre + " carga su próximo ataque");
+        }
+    }
+
+    class mago extends personajemagico implements curable {
+        public int sabiduria;
+    
+        public mago(String nombre, int nivel, int salud, int mana, int sabiduria) {
+            super(nombre, nivel, salud, mana);
+            this.sabiduria = sabiduria;
+        }
+    
+    
+        @Override
+        public void atacar() {
+            lanzar_hechizo();
+        }
+    
+        @Override
+        public void curar(int cantidad) {
+            System.out.println(nombre + " se cura a sí mismo " + cantidad + " puntos de salud");
+            salud += cantidad;
+        }
+    
+    }
+
+
+
+
+
+
+
 }
