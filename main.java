@@ -85,5 +85,17 @@ abstract class personaje {
         }
     }
 
+    interface defendible {
+        void defenderse();
+    }
+
+    interface curable {
+        void curar(int cantidad);
+    }
+
+    
+
+   
+
 
 }
