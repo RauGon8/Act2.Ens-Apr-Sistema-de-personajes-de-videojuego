@@ -59,6 +59,20 @@ abstract class personaje {
         this.nivel = nivel;
     }
 
+    abstract class personajefisico extends personaje {
+        protected int fuerza;
+
+        public personajefisico(String nombre, int salud, int nivel, int fuerza) {
+            super(nombre, salud, nivel);
+            this.fuerza = fuerza;
+        }
+
+        public void golpear() {
+            System.out.println(nombre + " golpea con fuerza " + fuerza);
+        }
+    }
+        
+
 
 
 }
