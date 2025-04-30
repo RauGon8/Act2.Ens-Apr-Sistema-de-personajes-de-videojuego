@@ -196,5 +196,36 @@ abstract class personaje {
         public void añadirPersonaje(personaje personaje) {
             this.personaje.add(personaje);
         }
+
+        public void mostrarAcciones() {
+            for (personaje p : personaje) {
+                if (p instanceof defendible) {
+                    ((defendible) p).defenderse();
+                }
+                if (p instanceof curable) {
+                    ((curable) p).curar(10);
+                }
+                if (p instanceof movilizable) {
+                    ((movilizable) p).moverse();
+                }
+                if (p instanceof ocultable) {
+                    ((ocultable) p).ocultar();
+                }
+                if (p instanceof personajefisico) {
+                    ((personajefisico) p).golpear();
+                }
+            }
+            
+
+
+
+
+        }
+
+
+
+
+
+
     }
 }
