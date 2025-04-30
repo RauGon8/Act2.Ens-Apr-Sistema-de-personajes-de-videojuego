@@ -60,7 +60,7 @@ abstract class personaje {
     public void setNivel(int nivel) {
         this.nivel = nivel;
     }
-
+}
     abstract class personajefisico extends personaje {
         protected int fuerza;
 
@@ -101,7 +101,6 @@ abstract class personaje {
     interface ocultable {
         void ocultar();
     }
-   
 
     class hechicero extends personajemagico implements defendible{
         public hechicero(String nombre, int salud, int nivel, int magia) {
@@ -196,7 +195,7 @@ abstract class personaje {
         public void añadirPersonaje(personaje personaje) {
             this.personaje.add(personaje);
         }
-
+    
         public void mostrarAcciones() {
             for (personaje p : personaje) {
                 if (p instanceof defendible) {
@@ -220,26 +219,6 @@ abstract class personaje {
                 if (p instanceof guerrero) {
                     ((guerrero) p).cargarAtaque();
                 }
-                if (p instanceof mago) {
-                    ((mago) p).curar(10);
-                }
-                if (p instanceof hechicero) {
-                    ((hechicero) p).defenderse();
-                }
-                if (p instanceof asesino) { 
-                    ((asesino) p).ocultar();
             }
-            
-
-
-
-
         }
-
-
-
-
-
-
     }
-}
