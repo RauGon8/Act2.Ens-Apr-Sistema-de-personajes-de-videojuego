@@ -1,13 +1,13 @@
 
 abstract class personaje {
-    String nombre;
-    int salud;
-    int vida;
+    protected String nombre;
+    protected int salud;
+    protected int nivel;
     
-    personaje(String nombre, int salud, int vida) {
+    personaje(String nombre, int salud, int nivel) {
         this.nombre = nombre;
         this.salud = salud;
-        this.vida = vida;
+        this.nivel = nivel;
     }
 
     abstract void atacar();
@@ -35,8 +35,30 @@ abstract class personaje {
     }
 
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getSalud() {
+        return salud;
+    }
+
+    public void setSalud(int salud) {
+        this.salud = salud;
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
 
 
 
-    
 }
