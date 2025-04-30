@@ -12,6 +12,29 @@ abstract class personaje {
 
     abstract void atacar();
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "{" +
+                "nombre='" + nombre + '\'' +
+                ", nivel=" + nivel +
+                ", salud=" + salud +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof personaje)) return false;
+        personaje p = (personaje) o;
+        return nombre.equals(p.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return nombre.hashCode();
+    }
+
+
 
 
 
