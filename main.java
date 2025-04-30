@@ -222,3 +222,21 @@ abstract class personaje {
             }
         }
     }
+
+    public class main {
+        public static void main(String[] args) {
+            Juego juego = new Juego();
+    
+            guerrero guerrero = new guerrero("Guerrero", 1, 100, 20, 10, 5);
+            mago mago = new mago("Mago", 1, 80, 30, 15);
+            hechicero hechicero = new hechicero("Hechicero", 1, 70, 25);
+            asesino asesino = new asesino("Asesino", 1, 90, 15);
+
+            juego.añadirPersonaje(guerrero);
+            juego.añadirPersonaje(mago);
+            juego.añadirPersonaje(hechicero);
+            juego.añadirPersonaje(asesino);
+    
+            juego.mostrarAcciones();
+        }
+    }
