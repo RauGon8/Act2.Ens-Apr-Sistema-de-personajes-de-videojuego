@@ -1,5 +1,6 @@
 import java.util.ArrayList;
-
+// Aqui le dejo el link del repositorio de github donde se encuentra el proyecto completo
+//https://github.com/RauGon8/Act2.Ens-Apr-Sistema-de-personajes-de-videojuego.git
 
 abstract class personaje {
     protected String nombre;
