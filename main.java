@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 
 abstract class personaje {
     protected String nombre;
@@ -184,11 +186,15 @@ abstract class personaje {
         }
     
     }
-
-
-
-
-
-
-
+    class Juego {
+        private ArrayList<personaje> personaje;
+    
+        public Juego() {
+            personaje = new ArrayList<>();
+        }
+    
+        public void añadirPersonaje(personaje personaje) {
+            this.personaje.add(personaje);
+        }
+    }
 }
